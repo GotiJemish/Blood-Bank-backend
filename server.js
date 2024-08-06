@@ -5,6 +5,9 @@ const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const path = require("path");
+//port
+const PORT = process.env.PORT || 8080;
+
 
 //dot config
 dotenv.config();
@@ -27,8 +30,7 @@ app.use("/inventory", require("./routes/inventoryRoutes"));
 app.use("/analytics", require("./routes/analyticsRoutes"));
 app.use("/admin", require("./routes/adminRoutes"));
 
-//port
-const PORT = process.env.PORT || 8080;
+
 
 //listen
 app.listen(PORT, () => {
